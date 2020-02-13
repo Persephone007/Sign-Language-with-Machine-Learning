@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Iridium by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Sign Language Interpreter</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+
+		<script type="text/javascript">
+			function fileSelected() {
+			  var file = document.getElementById('fileToUpload').files[0];
+			  if (file) {
+				var fileSize = 0;
+				if (file.size > 1024 * 1024)
+				  fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+				else
+				  fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+	  
+				document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
+				document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+				document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+			  }
+			}
+	  
+			function uploadFile() {
+			  var fd = new FormData();
+			  fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+			  var xhr = new XMLHttpRequest();
+			  xhr.upload.addEventListener("progress", uploadProgress, false);
+			  xhr.addEventListener("load", uploadComplete, false);
+			  xhr.addEventListener("error", uploadFailed, false);
+			  xhr.addEventListener("abort", uploadCanceled, false);
+			  xhr.open("POST", "UploadMinimal.aspx");
+			  xhr.send(fd);
+			}
+	  
+			function uploadProgress(evt) {
+			  if (evt.lengthComputable) {
+				var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+				document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+			  }
+			  else {
+				document.getElementById('progressNumber').innerHTML = 'unable to compute';
+			  }
+			}
+	  
+			function uploadComplete(evt) {
+			  /* This event is raised when the server send back a response */
+			  alert(evt.target.responseText);
+			}
+	  
+			function uploadFailed(evt) {
+			  alert("There was an error attempting to upload the file.");
+			}
+	  
+			function uploadCanceled(evt) {
+			  alert("The upload has been canceled by the user or the browser dropped the connection.");
+			}
+		  </script>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<div id="header">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">Interpreting ASL Images </a></h1>
+					<span>Application</span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Credits</a></li>
+						<li class="active"><a href="left-sidebar.html">Try Our App</a></li>
+						<li><a href="right-sidebar.html">Data Visualizations</a></li>
+						<li><a href="no-sidebar.html">Main</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row"> 
+
+					<!-- Sidebar -->
+					<div id="sidebar" class="4u">
+						<section>
+							<header>
+								<h2><center> ASL Label Guide </center></h2>
+							
+									<img src="images/AZkey.jpg" alt="" />
+									
+								
+							
+						</section>
+					</div>
+					
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+						<section>
+							<header>
+								<h2>Choose a File to Upload</h2>
+								<span class="byline"></span>
+							</header>
+					
+								<form id="form1" enctype="multipart/form-data" method="post" action="Upload.aspx">
+									<div class="row">
+									  <label for="fileToUpload">Select a File to Upload</label><br />
+									  <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+									</div>
+									<div id="fileName"></div>
+									<div id="fileSize"></div>
+									<div id="fileType"></div>
+									<div class="row">
+									  <input type="button" onclick="uploadFile()" value="Upload" />
+									</div>
+									<div id="progressNumber"></div>
+								  </form>
+							</div>
+						
+						</section>
+						<div>
+						</section>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="featured">
+			<div class="container">
+				<div class="row">
+					<div class="4u">
+						
+						<p><a href="#" class="button">Back to Top</a></p>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Footer -->
+		
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
