@@ -9,8 +9,8 @@ The first step was to create our own data sets; We have created three data sets 
 
 Then cropped all the pictures and uploaded them into AWS.
 
-From AWS we pulled all the pictures in to Jupyter Notebook then converted all the pictures to list of arrays
+From AWS we pulled all the pictures in to Jupyter Notebook then converted all the pictures to list of arrays.
 
-Then used those arrays to train the model and make predictions
+Then used those arrays to train the model and make predictions.
 
 Based on the training given so far Machine is not able to recognize the full alphabet if a random sign language letter was given from an outside source, however with more training with different picture resolutions will improve the accuracy of the Machine.
