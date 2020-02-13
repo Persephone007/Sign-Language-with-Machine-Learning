@@ -13,4 +13,6 @@ From AWS we pulled all the pictures in to Jupyter Notebook then converted all th
 
 Then used those arrays to train the model and make predictions.
 
-Based on the training given so far Machine is not able to recognize the full alphabet if a random sign language letter was given from an outside source, however with more training with different picture resolutions will improve the accuracy of the Machine.
+Further training is required as the machine does not recognize all hand signals when testing. Changing pixels, nodes, and tweeking the model more may produce better results in the future. 
+
+We also made tablaeu datasets to represent Deaf statistics and hosted them on out webpage. 
