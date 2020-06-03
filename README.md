@@ -13,4 +13,4 @@ The machine was then trained and ready for testing.
 
 Further training is required as the machine does not recognize all hand signals when testing. Changing pixels, nodes, and tweeking the model more may produce better results in the future. 
 
-We also made tablaeu datasets to represent Deaf statistics and hosted them on out webpage. 
+We also made tablaeu datasets to represent Deaf statistics and included them for visitors to review. 
